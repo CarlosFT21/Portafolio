@@ -1,0 +1,231 @@
+/*VARIABLES*/
+:root {
+    --primary: #3d3d50;
+    --secondary: #31fa9f;
+    --light: #ebebeb;
+    --dark: #333;
+    --gray: #bebece;
+    --hover: all .3s ease-out;
+  }
+  
+  /*GLOBAL*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background: url('./asset/pattern-bg.webp');
+    background-attachment: fixed;
+    height: 100%;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.8em;
+    color: var(--primary);
+    overflow-x: hidden;
+  }
+  a {
+    text-decoration: none;
+    color: var(--primary);
+  }
+  p {
+    opacity: .9;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  section {
+    padding: clamp(1rem,2vw,2rem);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--light);
+  }
+  
+  .sec_title {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    color: var(--gray);
+  }
+  
+  [class*="_item"] {
+    margin-top: 1.5rem;
+  }
+  
+  /*Layout Grid*/
+  
+  .container {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 1rem;
+    margin: 60px auto;
+  }
+  .grid {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  /* Sidebar */
+  
+  .sidebar {
+    position: relative;
+  }
+  .profile{
+    position: sticky!important;
+    top: 0;
+    height: calc(100vh - 10px);
+    padding:0 2rem;
+    overflow-y: auto;
+  }
+  .profile::-webkit-scrollbar {
+    width: 6px;
+  }
+  .profile_header {
+    margin: 1rem 0;
+  }
+  
+  .profile_links {
+    display: flex;
+  }
+  .profile_links a {
+    text-decoration: none;
+    height: 35px;
+    width: 35px;
+    margin-right: 1rem;
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+    color: var(--dark);
+    border-radius: 2px;
+    border: 2px solid var(--light);
+  }
+  .profile_links a:hover {
+    transition: var(--hover);
+    color: var(--secondary);
+  }
+  
+  /*Expertise Section*/
+  
+  .expertise_item p{
+    font-size: 0.875rem;
+  }
+  
+  /*Skillls Section*/
+  .progress_item h4 {
+    font-weight: normal;
+  }
+  .progress_bar {
+    position: relative;
+    border-radius: 4px;
+    height: 4px;
+  }
+  .progress {
+    position: absolute;
+    height: 100%;
+    background: var(--secondary);
+    z-index: 0;
+    border-radius: 4px;
+    text-align: right;
+    animation: fromZero ease-in-out 1s;
+  }
+  @keyframes fromZero {
+    from {
+        width: 0;
+    }
+  }
+  .progress_tooltip {
+    position: absolute;
+    top: -30px;
+    padding: 0 .26rem;
+    font-size: 12px;
+    background: var(--dark);
+    border-radius: 3px;
+    color: var(--light);
+  }
+  .progress_tooltip::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    border-top: 6px solid var(--dark);
+    border-right: 8px solid transparent;
+  }
+  
+  /*Portfolio Section*/
+  .project_img {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: var(--light);
+  }
+  .project_img img {
+    width: 100%;
+  }
+  
+  .project_img .project_details {
+    position: absolute;
+    bottom: .5rem;
+    left: .5rem;
+    background: linear-gradient(to right,rgba(84, 84, 84, 0.198),rgba(0, 0, 0, 0.5));
+    padding: 1rem;
+    opacity: 0;
+    transition: var(--hover);
+  }
+  .project_img:hover .project_details {
+    opacity: 1;
+  }
+  /*Contact Form Section*/
+  input,textarea{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--secondary);
+    outline: 0;
+  }
+  ::placeholder {
+    font-family: Montserrat;
+  }
+  button {
+    background: var(--secondary);
+    outline: none;
+    border: none;
+    padding: 13px 35px;
+    color: var(--light);
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: var(--hover);
+  }
+  button:hover {
+    opacity: .8;
+  }
+  
+  /*FOOTER*/
+  footer p{
+    text-align: center;
+  }
+  
+  /* Responsive */
+  @media (min-width:768px) {
+    .main.grid {
+        grid-template-columns: 1fr 2fr;
+    }
+    .col_2 {
+        grid-template-columns: repeat(2,1fr);
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*  */
